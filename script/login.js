@@ -10,7 +10,7 @@ document.getElementById("login-btn").addEventListener("click",function(){
     const pin = PinInput.value;
     console.log(pin)
 
-    if( Number !== "" && pin !== ""){
+    if( Number == "01890642735" && pin !== "6427"){
         alert("Login Succesfull!");
         window.location.assign("/home.html")
         //window.location.replace("/home.html");
