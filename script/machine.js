@@ -31,11 +31,17 @@ function showonly(id)
     const addMoney = document.getElementById("addMoney");
     const cashout = document.getElementById("cashout");
     const Transaction = document.getElementById("Transaction");
-    console.log(`${addMoney}`)
+    const Transfer = document.getElementById("TransferMoney");
+    const Paybill = document.getElementById("Paybill");
+    const BonusCupon = document.getElementById("BonusCupon");
 
     addMoney.classList.add('hidden');
     cashout.classList.add('hidden');
     Transaction.classList.add('hidden');
+    Transfer.classList.add('hidden');
+    Paybill.classList.add('hidden');
+    BonusCupon.classList.add('hidden');
+    // Transaction.classList.add('hidden');
 
     const selected = document.getElementById(id);
     selected.classList.remove('hidden');
