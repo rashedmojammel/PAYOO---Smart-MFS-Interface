@@ -49,11 +49,11 @@
                 <P class="text-neutral/50">Enjoy easy and convenient financial services with us. Cashout charge is low and </P>
             </div>
             <div class="grid grid-cols-3 gap-2 mt-5 space-y-5">
-                <button class="btn flex-col h-full py-4 btn-primary btn-soft rounded-2xl">
+                <button onclick="showonly('addMoney')" class="btn flex-col h-full py-4 btn-primary btn-soft rounded-2xl">
                     <img src="./assets/opt-1.png">
                      <P class="text-neutral/50">Add money</P>
                 </button>
-                <button class="btn flex-col h-full py-4 btn-primary btn-soft rounded-2xl">
+                <button onclick="showonly('cashout')" class="btn flex-col h-full py-4 btn-primary btn-soft rounded-2xl">
                     <img src="./assets/opt-2.png">
                      <P class="text-neutral/50">Cashout</P>
                 </button>
@@ -69,17 +69,41 @@
                     <img src="./assets/opt-5.png">
                      <P class="text-neutral/50">Pay bill</P>
                 </button>
-                <button class="btn flex-col h-full py-4 btn-primary btn-soft rounded-2xl">
+                <button onclick="showonly('Transaction')" class="btn flex-col h-full py-4 btn-primary btn-soft rounded-2xl">
                     <img src="./assets/opt-6.png">
                      <P class="text-neutral/50">Transactions</P>
                 </button>
                 
             </div>
         </section>
-        <section>
-            <div class="w-11/12 mx-auto py-5">
-                <h1 class="font-bold text-2xl mb-5">Cash Out</h1>
+        <section id="addMoney">
+             <div class="w-11/12 mx-auto py-5">
+                <h1 class="font-bold text-2xl mb-5">Add Money</h1>
         <div class="card bg-base-100 w-full    rounded-2xl ">
+      <div class="card-body">
+        <fieldset class="fieldset space-y-2">
+            <label class="label text-neutral font-bold">Select a Bank</label>
+            <select id="addmoney-bank" class="select rounded-2xl bg-base-200 w-full">
+                
+  <option disabled selected >Select Bank</option>
+  <option value="DBBL">DBBL</option>
+  <option value="IBBL">IBBL</option>
+  <option value="CITY">City Bank</option>
+</select>
+          <label class="label text-neutral font-bold">Bank Account Number</label>
+          <input id="addMoney-input" type="text" maxlength="11" minlength="11" class="input rounded-2xl bg-base-200 w-full" placeholder="Enter 11 digit Account Number" />
+           <label class="label text-neutral font-bold">Amount To Add</label>
+          <input id="addMoney-amount" type="number"  class="input rounded-2xl bg-base-200 w-full" placeholder="Enter The Amount To Add" />
+          <label class="label text-neutral font-bold">4 Digit Pin</label>
+          <input id="addMoney-pin" type="password" maxlength="4" minlength="4" class="input rounded-2xl bg-base-200 w-full" placeholder="4 Digit Pin" />
+          <button id="addMoney-btn" class="btn btn-neutral mt-4 rounded-2xl bg-[#3B25C1] border-none text-xl">Add Money</button>
+        </fieldset>
+      </div>
+            </div>
+        </section >
+            <section id="cashout" class="w-11/12 mx-auto py-5 hidden">
+                <h1 class="font-bold text-2xl mb-5">Cash Out</h1>
+        <div class="card bg-base-100 w-full    rounded-2xl  ">
       <div class="card-body">
         <fieldset class="fieldset space-y-2">
           <label class="label text-neutral font-bold">Agent Number</label>
@@ -91,10 +115,18 @@
           <button id="cashout-btn" class="btn btn-neutral mt-4 rounded-2xl bg-[#3B25C1] border-none text-xl">Withdraw Money</button>
         </fieldset>
       </div>
-            </div>
-        </section>
+    </section>
+    <section id="Transaction" class="w-11/12 mx-auto py-5 hidden">
+        <h1 class="font-bold text-2xl mb-5">Transactions</h1>
+        <div id="Transaction-history" class = " rounded-full bg-base-200 w-full p-3 space-y-5">
+        </div>
+
+    </section>
+
     </main>
+
     <script src="./script/machine.js"></script>
+    <script src="./script/addmoney.js"></script>
     <script src="./script/cashout.js"></script>
   </body>
   

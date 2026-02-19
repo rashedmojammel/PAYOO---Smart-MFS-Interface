@@ -5,10 +5,8 @@ document.getElementById("cashout-btn").addEventListener("click" ,function(){
     const cashoutAmount = getValueFormInput("cashout-amount");
     console.log(cashoutAmount);
 
-    const currentBalanceInput = document.getElementById("balance");
-    const currentBalance = currentBalanceInput.innerText;
-    console.log(currentBalance);
-     const newBalance = Number(currentBalance) - Number(cashoutAmount);
+    const currentBalanceInput = getBalance("balance")
+    const newBalance = currentBalanceInput - Number(cashoutAmount);
 
     if(newBalance < 0)
     {
@@ -21,14 +19,27 @@ document.getElementById("cashout-btn").addEventListener("click" ,function(){
     if( cashoutNum =="01890642735" && cashoutPin == "6427")
     {
         alert("Cash out successful !");
-        currentBalanceInput.innerText = newBalance;
+        setBalance(newBalance)
+        const TransactionElement = document.getElementById("Transaction-history");
+    const Transaction = document.createElement('div');
+
+    Transaction.innerHTML = `<div id="Transaction-history" class="border border-green-400 rounded-2xl bg-base-200 w-full p-5 shadow-lg flex items-center gap-3">
+  <div class="bg-green-100 text-red-600 rounded-full p-2">
+    ❌
+  </div>
+  <div>
+    <p class="text-sm text-gray-400 font-mono">Transaction Successful</p>
+    <p class="font-semibold text-base-content">Cashout succesfull from <span class="text-green-500">${cashoutNum}</span></p>
+    <p class="text-xs text-gray-400 mt-1">${new Date().toLocaleString()}</p>
+  </div>
+</div>`;
+    
+    TransactionElement.append(Transaction);
     } 
-    // 7. 5-2 true :: show an error alert > return
     else{
         alert("Cashout failed!");
         return;
     }
-
     
 })
 
