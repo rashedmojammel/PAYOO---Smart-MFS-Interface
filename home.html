@@ -23,7 +23,7 @@
   </head>
 
   <body class="min-h-screen max-w-md bg-base-200 mx-auto">
-    <header class="border-b-2 border-gray-300">
+    <header class="border-b-2 border-gray-300 sticky top-0 bg-base-200">
         <section class="w-11/12 mx-auto py-3 flex justify-between items-center">
             <div class="left-content flex gap-3">
                 <div>
@@ -88,13 +88,13 @@
           <input id="cashout-amount" type="number"  class="input rounded-2xl bg-base-200 w-full" placeholder="Enter The Amount" />
           <label class="label text-neutral font-bold">4 Digit Pin</label>
           <input id="cashout-pin" type="password" maxlength="4" minlength="4" class="input rounded-2xl bg-base-200 w-full" placeholder="4 Digit Pin" />
-          <button id="cashout-btn" class="btn btn-neutral mt-4 rounded-2xl bg-[#3B25C1] border-none text-xl">Login</button>
+          <button id="cashout-btn" class="btn btn-neutral mt-4 rounded-2xl bg-[#3B25C1] border-none text-xl">Withdraw Money</button>
         </fieldset>
       </div>
             </div>
         </section>
     </main>
-    
+    <script src="./script/machine.js"></script>
     <script src="./script/cashout.js"></script>
   </body>
   
